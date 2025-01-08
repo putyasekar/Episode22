@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Birthday UI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Circular Std", sans-serif;
+            background: #121212;
+            color: #fff;
+        }
+
+        .header {
+            background: linear-gradient(180deg, #3e2aad 0%, #121212 100%);
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .arrows {
+            display: flex;
+            gap: 10px;
+        }
+
+        .arrow {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #242424;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .arrow svg {
+            fill: #fff;
+        }
+
+        .title {
+            margin: 20px 30px;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #242424;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        .profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .profile span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            margin-left: 240px;
+            padding: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #242424;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+
+        .card .content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card .content h2 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .sidebar {
+            width: 240px;
+            background: #000;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            position: fixed;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .sidebar ul li img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .sidebar ul li span {
+            color: #fff;
+        }
+
+        .now-playing {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background: #242424;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .now-playing img {
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+        }
+
+        .now-playing .info {
+            margin-left: 15px;
+        }
+
+        .now-playing .info h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .now-playing .info p {
+            margin: 0;
+            font-size: 12px;
+            color: #b3b3b3;
+        }
+
+        .controls {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .controls button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .controls button svg {
+            fill: #fff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <ul>
+            <li><img src="https://via.placeholder.com/20" alt=""><span>Home Is You</span></li>
+            <li><img src="https://via.placeholder.com/20" alt=""><span>Search Apa Yaa</span></li>
+            <li><img src="https://via.placeholder.com/20" alt=""><span>Fadil's Library</span></li>
+            <li><img src="https://via.placeholder.com/20" alt=""><span>Create More Good Things</span></li>
+            <li><img src="https://via.placeholder.com/20" alt=""><span>Favorit aku ya kamu lah</span></li>
+        </ul>
+    </div>
+    <div class="header">
+        <div class="header-content">
+            <div class="arrows">
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                </div>
+                <div class="arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M8.59 16.59 10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="https://via.placeholder.com/40" alt="Profile">
+                <span>Fadil Ganteng</span>
+            </div>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1 class="title">Selamat ulang tahun, Fadil ku sayang</h1>
+        <div class="cards">
+            <div class="card">
+                <img src="https://via.placeholder.com/200x120" alt="">
+                <div class="content">
+                    <h2>Hayo siapa yang ulang tahun hari ini?</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200x120" alt="">
+                <div class="content">
+                    <h2>Keren ngga aku bikin ginian?</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200x120" alt="">
+                <div class="content">
+                    <h2>Sayang, kado buku nya nyusul ya</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200x120" alt="">
+                <div class="content">
+                    <h2>Hope you like it ya, sayang</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200x120" alt="">
+                <div class="content">
+                    <h2>Hihi happy 22 sayanggg!</h2>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/200x120" alt="">
+                <div class="content">
+                    <h2>Semoga kita langgeng.</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="now-playing">
+        <img src="https://via.placeholder.com/60" alt="Now Playing">
+        <div class="info">
+            <h3>Jatuh Hati</h3>
+            <p>Raisa</p>
+        </div>
+        <div class="controls">
+            <button onclick="document.getElementById('audio').play()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <button onclick="document.getElementById('audio').pause()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+            </button>
+        </div>
+        <audio id="audio" src="your-audio-file.mp3" loop></audio>
+    </div>
+</body>
+</html>
